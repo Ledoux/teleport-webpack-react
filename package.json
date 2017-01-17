@@ -20,5 +20,5 @@
     "webpack-dev-server": "^1.14.1"
   },
   "name": "teleport-webpack-react",
-  "version": "0.0.4"
+  "version": "0.0.5"
 }
