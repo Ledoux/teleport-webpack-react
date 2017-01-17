@@ -23,7 +23,7 @@ export function domReady () {
 
 domReady().then(() => {
   // actual render app
-  const reactDivElement = document.getElementById('react_div')
+  const reactDivElement = document.getElementById('app_div')
   if (!reactDivElement) {
     return
   }
