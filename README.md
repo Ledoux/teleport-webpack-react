@@ -1,10 +1,10 @@
-# teleport-webpack-react
-This is a template from the app https://github.com/snipsco/teleport that helps you to build a setup to build a cool bundled react app with a flask-websocketer
+# Teleport webpack react
+A [Teleport](https://github.com/snipsco/teleport) frontend template to integrate a bundled react app.
 
-You can test yourself with
+## How to use it
+Simply add it to the list of templates. For instance:
 ```
-tpt -c --project my-app --templates teleport-flask-websocketer,teleport-webpack-react,teleport-snips
+tpt -c --project my-app --templates teleport-flask-webrouter,teleport-webpack-react,teleport-heroku
 ```
-and then follow these instructions https://github.com/snipsco/teleport/blob/master/README.md#start-a-new-project
 
-See for instance how this was used to build our benchmark dashboard https://github.com/snipsco/snips-sdk-benchmark
+:warning: Important note, this is a frontend template, it cannot be deployed alone. You should deploy it on side of a backend template (for instance the [teleport flask webrouter](https://github.com/snipsco/teleport-flask-webrouter)).
