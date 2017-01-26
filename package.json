@@ -1,4 +1,7 @@
 {
+  "author": "The Snips Tooling Team",
+  "license": "MIT",
+  "description": "Teleport frontend template to integrate a bundled react app",
   "dependencies": {
     "react": "15.0.2",
 		"react-dom": "15.0.2"
