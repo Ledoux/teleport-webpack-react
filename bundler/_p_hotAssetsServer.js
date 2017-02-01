@@ -31,4 +31,5 @@ new WebpackDevServer(
   if (err) {
     return console.log(err)
   }
+  console.log(`You hot server is available here ${HOST}:${PORT}`)
 })
