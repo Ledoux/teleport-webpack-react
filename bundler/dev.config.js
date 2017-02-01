@@ -1,7 +1,7 @@
 const webpack = require('webpack')
 const config = require('./config')
 
-const HOST = '0.0.0.0'
+const HOST = '0.0.0.0' // so we can test the project remotely over the same network
 const PORT = 3000
 
 const hotAssetsServer = {
