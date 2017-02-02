@@ -1,5 +1,6 @@
 const path = require('path')
 const autoprefixer = require('autoprefixer')
+
 const ROOT_DIR = path.join(__dirname, '../')
 
 module.exports = {
@@ -14,7 +15,7 @@ module.exports = {
     filename: 'index_bundle.js'
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
         loader: 'url-loader?limit=10000&mimetype=application/font-woff'
