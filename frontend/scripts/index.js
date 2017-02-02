@@ -30,7 +30,7 @@ domReady().then(() => {
 
   if (!module.hot) {
     // production
-    ReactDOM.render(<Root/>, reactDivElement)
+    ReactDOM.render(<Root />, reactDivElement)
   } else {
     // dev
     const AppContainer = require('react-hot-loader').AppContainer
