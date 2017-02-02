@@ -1,7 +1,17 @@
 # Teleport webpack react
 [![npm version](https://badge.fury.io/js/teleport-webpack-react.svg)](https://badge.fury.io/js/teleport-webpack-react)
 
-A [Teleport](https://github.com/snipsco/teleport) frontend template to integrate a bundled react app.
+<table>
+  <td>
+    <img src="icon.png" alt="icon" title="made by @cecilesnips"/>
+  </td>
+  <td>
+    <img src="teleport-webpack-react.png" alt="icon" title="made by @cecilesnips"/>
+  </td>
+  <td>
+    A [Teleport](https://github.com/snipsco/teleport) frontend template to integrate a bundled react app.
+  </td>
+</table>
 
 ## How to use it
 Simply add it to the list of templates. For instance:
