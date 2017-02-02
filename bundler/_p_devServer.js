@@ -3,8 +3,8 @@ const WebpackDevServer = require('webpack-dev-server')
 
 const config = require('./dev.config')
 
-const HOST = config.hotAssetsServer.host
-const PORT = config.hotAssetsServer.port
+const HOST = config.devServer.host
+const PORT = config.devServer.port
 
 new WebpackDevServer(
   webpack(config),

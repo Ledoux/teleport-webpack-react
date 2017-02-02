@@ -1,1 +1,1 @@
-NODE_ENV=webpack node ./bundler/hotAssetsServer.js
+NODE_ENV=webpack node ./bundler/devServer.js
