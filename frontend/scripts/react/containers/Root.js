@@ -1,10 +1,10 @@
 import React from 'react'
 
-import ReactBackground from '../components/ReactBackground'
+import TeleportWelcome from '../components/TeleportWelcome'
 
 const Root = () => (
   <div>
-    <ReactBackground />
+    <TeleportWelcome />
   </div>
 )
 
