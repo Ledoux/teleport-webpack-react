@@ -1,9 +1,8 @@
 import React from 'react'
 
 const TeleportWelcome = ({templates}) => {
-  const { templates } = this.props
-  return (<div id="app_div">
-    <div className="teleport center p2"/>
+  return (
+    <div className="teleport center p2">
       <div className="teleport__logo mb3">
         <img className="teleport__logo__img" src="https://raw.githubusercontent.com/snipsco/teleport/master/icon-white.png" />
       </div>
@@ -16,30 +15,30 @@ const TeleportWelcome = ({templates}) => {
           className="teleport__text__href"
           href="https://github.com/snipsco/teleport"
           target="_blank"
-        >
-          Teleport
+        > Teleport
         </a>
       </p>
-      <div className="teleport__templates p2">
+      <div className="teleport__templates p2 mb3">
         <div className="flex justify-center items-center">
           {
-            templates.map((template, index) => (<div className="mr2">
-             <a
-              key={index}
-              title={template.name}
-              href={template.gitUrl}
-                <img src={templateiconUrl} />
-             </a>
-           </div>)
+            templates.map((template, index) => (
+              <div key={index} className="mr2">
+               <a
+                title={template.name}
+                href={template.gitUrl} >
+                  <img src={template.iconUrl} />
+               </a>
+              </div>)
+            )
           }
         </div>
       </div>
       <div className="teleport__footer">
-          Copyright the Snips Tooling Team
+          Made by the Snips Tooling Team with Love
       </div>
     </div>
-  </div>
-)}
+  )
+}
 
 TeleportWelcome.defaultProps = {
   templates: []
