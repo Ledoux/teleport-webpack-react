@@ -4,7 +4,7 @@ import TeleportWelcome from '../components/TeleportWelcome'
 
 const Root = () => (
   <div>
-    <TeleportWelcome {...window.__TELEPORT__}/>
+    <TeleportWelcome {...window.TELEPORT_WELCOME}/>
   </div>
 )
 
