@@ -34,7 +34,7 @@ const TeleportWelcome = ({templates}) => {
         </div>
       </div>
       <div className="teleport__footer">
-        Made by the Snips Tooling Team with Love
+        From the Snips Tooling Team
       </div>
     </div>
   )
