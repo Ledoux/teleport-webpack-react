@@ -12,7 +12,7 @@ const hotAssetsServer = {
 
 module.exports = Object.assign(
   config,
-  { hotAssetsServer: hotAssetsServer },
+  { hotAssetsServer },
   {
     devtool: 'eval',
     entry: Object.assign(
