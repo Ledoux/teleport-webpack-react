@@ -4,7 +4,7 @@ const TeleportWelcome = ({templates}) => {
   return (
     <div className="teleport center p2">
       <div className="teleport__logo mb3">
-        <img className="teleport__logo__img" src="https://raw.githubusercontent.com/snipsco/teleport/master/icon-white.png" />
+        <img className="teleport__logo__img" src="https://raw.githubusercontent.com/snipsco/teleport/master/icons/icon-white.png" />
       </div>
       <h2 className="mb1">
         Welcome!
