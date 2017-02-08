@@ -3,10 +3,10 @@
 
 <table>
   <td>
-    <img src="icon.png" alt="icon" title="made by @cecilesnips"/>
+    <img src="https://raw.githubusercontent.com/snipsco/teleport-webpack-react/master/icon.png" alt="icon" title="made by @cecilesnips"/>
   </td>
   <td>
-    <img src="teleport-webpack-react.png" alt="icon" title="made by @cecilesnips"/>
+    <img src="https://raw.githubusercontent.com/snipsco/teleport-webpack-react/master/teleport-webpack-react.png" alt="icon" title="made by @cecilesnips"/>
   </td>
   <td>
     A <a href="https://github.com/snipsco/teleport"> Teleport </a> frontend template to integrate a bundled react app.
