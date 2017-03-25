@@ -1,4 +1,4 @@
-# Teleport Webpack React
+# teleport-webpack-react
 [![npm version](https://badge.fury.io/js/teleport-webpack-react.svg)](https://badge.fury.io/js/teleport-webpack-react)
 
 <table>
