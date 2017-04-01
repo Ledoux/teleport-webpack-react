@@ -11,7 +11,7 @@ module.exports = {
   output: {
     path: path.join(ROOT_DIR, 'backend/servers/$[frontend.serverName]/app/static'),
     publicPath: '/static',
-    filename: 'index_bundle.js'
+    filename: 'scripts/index_bundle.js'
   },
   module: {
     loaders: [
