@@ -27,7 +27,7 @@ module.exports = Object.assign(
     output: Object.assign(
       config.output,
       {
-        publicPath: `${hotAssetsServer.url}/${config.output.publicPath}`
+        publicPath: `${hotAssetsServer.url}${config.output.publicPath}`
       }
     ),
     plugins: [

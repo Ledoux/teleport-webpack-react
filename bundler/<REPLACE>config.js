@@ -9,8 +9,8 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(ROOT_DIR, 'backend/servers/$[frontend.serverName]/app/static/scripts'),
-    publicPath: 'static/scripts/',
+    path: path.join(ROOT_DIR, 'backend/servers/$[frontend.serverName]/app/static'),
+    publicPath: '/static',
     filename: 'index_bundle.js'
   },
   module: {
