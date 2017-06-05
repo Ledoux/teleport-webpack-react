@@ -1,3 +1,5 @@
+const autoprefixer = require('autoprefixer')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const fs = require('fs')
 const gzipSize = require('gzip-size')
 const path = require('path')
@@ -10,6 +12,32 @@ const PRODUCTION = 'production'
 module.exports = Object.assign(
   config,
   {
+    module: {
+      rules: config.module.loaders.concat([{
+          test: /\.(eot|woff|woff2|ttf|otf|svg|png|jpg)$/,
+          use: 'url-loader?limit=30000&name=/fonts/[name].[ext]'
+        },
+        {
+          test: /\.s?css$/,
+          use: ExtractTextPlugin.extract({
+            fallback: 'style-loader',
+            use: [
+              'css-loader',
+              {
+                loader: 'postcss-loader',
+                options: {
+                  plugins: function () {
+                    return [autoprefixer]
+                  }
+                }
+              },
+              'sass-loader'
+            ]
+          }),
+          exclude: /node_modules/
+        }
+      ])
+    },
     plugins: [
       new webpack.DefinePlugin({'process.env': { NODE_ENV: `'${PRODUCTION}'` }}),
       function () {
@@ -23,7 +51,16 @@ module.exports = Object.assign(
             console.log('\n\nGZIP size\n', filename + ': ~', kbSize, 'kB\n')
           })
         })
-      }
+      },
+      new ExtractTextPlugin({
+        filename: 'styles/index_bundle.css'
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+          screw_ie8: true
+        }
+      })
     ]
   }
 )

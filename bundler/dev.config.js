@@ -1,38 +1,29 @@
 const webpack = require('webpack')
 const config = require('./config')
-
-const HOST = '0.0.0.0' // so we can test the project remotely over the same network
-const PORT = 3000
-
-const hotAssetsServer = {
-  host: HOST,
-  port: PORT,
-  url: `http://${HOST}:${PORT}`
-}
+const serverConfig = require('./server.config.js')
 
 module.exports = Object.assign(
+  {},
   config,
-  { hotAssetsServer },
   {
-    devtool: 'eval',
+    devtool: 'source-map',
     entry: Object.assign(
       {
         index: [
           'react-hot-loader/patch',
-          `webpack-dev-server/client?${hotAssetsServer.url}`,
+          `webpack-dev-server/client?${serverConfig.url}`,
           'webpack/hot/only-dev-server'
         ].concat(config.entry.index)
       }
     ),
-    output: Object.assign(
+    output: Object.assign({},
       config.output,
       {
-        publicPath: `${hotAssetsServer.url}${config.output.publicPath}`
+        publicPath: `${serverConfig.url}/${config.output.publicPath}`
       }
     ),
     plugins: [
       new webpack.HotModuleReplacementPlugin()
-    ],
-    port: PORT
+    ]
   }
 )
