@@ -11,23 +11,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: 'url-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        use: 'file-loader'
-      },
-      {
-        test: /\.s?css$/,
-        exclude: /node_modules/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader?cacheDirectory'
@@ -35,8 +18,8 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(ROOT_DIR, 'backend/servers/$[frontend.serverName]/app/static/scripts'),
-    publicPath: 'static/scripts/',
-    filename: 'index_bundle.js'
+    path: path.join(ROOT_DIR, 'backend/servers/express-webrouter/app/static'),
+    publicPath: '/static',
+    filename: 'scripts/index_bundle.js'
   }
 }

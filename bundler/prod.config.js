@@ -6,14 +6,13 @@ const path = require('path')
 const webpack = require('webpack')
 
 const config = require('./config')
+const onProdDone = require('./onProdDone.js').default
 
-const PRODUCTION = 'production'
-
-module.exports = Object.assign(
+module.exports = Object.assign({},
   config,
   {
     module: {
-      rules: config.module.loaders.concat([{
+      rules: config.module.rules.concat([{
           test: /\.(eot|woff|woff2|ttf|otf|svg|png|jpg)$/,
           use: 'url-loader?limit=30000&name=/fonts/[name].[ext]'
         },
@@ -39,7 +38,7 @@ module.exports = Object.assign(
       ])
     },
     plugins: [
-      new webpack.DefinePlugin({'process.env': { NODE_ENV: `'${PRODUCTION}'` }}),
+      new webpack.DefinePlugin({ 'process.env': { NODE_ENV: '"production"' } }),
       function () {
         this.plugin('done', function (stats) {
           const filename = stats.compilation.outputOptions.filename.replace('[hash]', stats.hash)
@@ -60,7 +59,12 @@ module.exports = Object.assign(
           warnings: false,
           screw_ie8: true
         }
-      })
+      }),
+      function () {
+        this.plugin('done', function (stats) {
+          onProdDone(stats)
+        })
+      }
     ]
   }
 )
