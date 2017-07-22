@@ -12,7 +12,7 @@ new WebpackDevServer(
   {
     contentBase: 'backend/servers/$[frontend.serverName]/app/templates/',
     headers: {
-      "Access-Control-Allow-Origin": "*"
+      "Access-Control-Allow-Origin": HOST
     },
     hot: true,
     historyApiFallback: true,
