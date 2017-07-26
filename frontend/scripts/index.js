@@ -1,5 +1,4 @@
-// required just for webpack bundling
-require('../styles/index.scss')
+require('./utils/styles')
 
 import React from 'react'
 import ReactDOM from 'react-dom'

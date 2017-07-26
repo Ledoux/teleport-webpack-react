@@ -30,7 +30,15 @@ module.exports = Object.assign({},
                   }
                 }
               },
-              'sass-loader'
+              'sass-loader',
+              {
+               loader: "@epegzz/sass-vars-loader",
+               options: {
+                 files: [
+                   path.resolve(__dirname, '../frontend/scripts/utils/sass.js')
+                 ]
+               }
+              }
             ]
           }),
           exclude: /node_modules/
