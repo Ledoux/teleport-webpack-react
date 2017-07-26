@@ -1,18 +1,22 @@
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 
-const config = require('./dev.config')
+const devConfig = require('./dev.config')
+const serverConfig = require('./server.config.js')
 
-const HOST = config.hotAssetsServer.host
-const PORT = config.hotAssetsServer.port
+const HOST = serverConfig.host
+const PORT = serverConfig.port
 
 new WebpackDevServer(
-  webpack(config),
+  webpack(devConfig),
   {
     contentBase: 'backend/servers/$[frontend.serverName]/app/templates/',
+    headers: {
+      "Access-Control-Allow-Origin": '$[frontend.serverHost]'
+    },
     hot: true,
     historyApiFallback: true,
-    publicPath: config.output.publicPath,
+    publicPath: devConfig.output.publicPath,
 
     // provide less noisy output from webpack
     quiet: false,
