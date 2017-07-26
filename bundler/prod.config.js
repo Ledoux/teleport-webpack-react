@@ -38,7 +38,7 @@ module.exports = Object.assign({},
                    path.resolve(__dirname, '../frontend/scripts/utils/sass.js')
                  ]
                }
-            }
+              }
             ]
           }),
           exclude: /node_modules/
