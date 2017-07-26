@@ -1,44 +1,26 @@
 const path = require('path')
-const autoprefixer = require('autoprefixer')
+
 const ROOT_DIR = path.join(__dirname, '../')
 
 module.exports = {
   entry: {
     index: [
+      'babel-polyfill',
       path.join(ROOT_DIR, 'frontend/scripts/index.js')
     ]
   },
-  output: {
-    path: path.join(ROOT_DIR, 'backend/servers/$[frontend.serverName]/app/static'),
-    publicPath: '/static',
-    filename: 'scripts/index_bundle.js'
-  },
   module: {
-    loaders: [
-      {
-        test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'url-loader?limit=10000&mimetype=application/font-woff'
-      },
-      {
-        test: /\.(ttf|eot|svg|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-        loader: 'file-loader'
-      },
-      {
-        test: /\.s?css$/,
-        exclude: /node_modules/,
-        loader: 'style!css!postcss!sass',
-      },
+    rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['latest', 'react']
-        }
+        use: 'babel-loader?cacheDirectory'
       }
     ]
   },
-  postcss: [
-    autoprefixer()
-  ]
+  output: {
+    path: path.join(ROOT_DIR, 'backend/servers/express-webrouter/app/static'),
+    publicPath: '/static',
+    filename: 'scripts/index_bundle.js'
+  }
 }

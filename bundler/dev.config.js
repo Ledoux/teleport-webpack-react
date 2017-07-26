@@ -1,38 +1,53 @@
 const webpack = require('webpack')
+
 const config = require('./config')
+const serverConfig = require('./server.config.js')
 
-const HOST = '0.0.0.0' // so we can test the project remotely over the same network
-const PORT = 3000
-
-const hotAssetsServer = {
-  host: HOST,
-  port: PORT,
-  url: `http://${HOST}:${PORT}`
-}
-
-module.exports = Object.assign(
+module.exports = Object.assign({},
   config,
-  { hotAssetsServer },
   {
-    devtool: 'eval',
+    devtool: 'source-map',
     entry: Object.assign(
       {
         index: [
           'react-hot-loader/patch',
-          `webpack-dev-server/client?${hotAssetsServer.url}`,
+          `webpack-dev-server/client?${serverConfig.url}`,
           'webpack/hot/only-dev-server'
         ].concat(config.entry.index)
       }
     ),
-    output: Object.assign(
+    module: {
+      rules: config.module.rules.concat([{
+          test: /\.s?css$/,
+          exclude: /node_modules/,
+          use: [
+            'style-loader',
+            'css-loader',
+            'sass-loader',
+            {
+               loader: "@epegzz/sass-vars-loader",
+               options: {
+                 files: [
+                   path.resolve(__dirname, '../frontend/scripts/utils/sass.js')
+                 ]
+               }
+            }
+          ]
+        }, {
+          test: /\.(eot|woff|woff2|ttf|otf|svg|png|jpg)$/,
+          use: 'url-loader?limit=30000'
+        }
+      ])
+    },
+    output: Object.assign({},
       config.output,
       {
-        publicPath: `${hotAssetsServer.url}${config.output.publicPath}`
+        // note that the output.publicPath has already a slash at the beginning
+        publicPath: `${serverConfig.url}${config.output.publicPath}/`
       }
     ),
     plugins: [
       new webpack.HotModuleReplacementPlugin()
-    ],
-    port: PORT
+    ]
   }
 )
