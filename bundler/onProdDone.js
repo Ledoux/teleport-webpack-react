@@ -1,2 +1,2 @@
 function onProdDone (stats) {}
-export default onProdDone
+module.exports = onProdDone
