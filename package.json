@@ -9,6 +9,7 @@
   "license": "MIT",
   "description": "Teleport frontend template to integrate a bundled react app",
   "dependencies": {
+    "lodash.kebabcase": "^4.1.1",
     "react": "^15.5.4",
 		"react-dom": "^15.5.4"
   },
