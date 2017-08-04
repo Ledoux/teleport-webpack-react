@@ -5,7 +5,7 @@
     font-size: 60px;
   }
   font-weight: 300;
-  color: #4c4c4c;
+  color: $dark-grey;
   &__logo {
     padding-top: 125px;
     &__img {
@@ -19,7 +19,7 @@
       font-size: 50px;
     }
     &__href {
-      color: #1acfff;
+      color: $light-grey;
       text-decoration:none;
     }
   }
