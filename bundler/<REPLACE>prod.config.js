@@ -18,6 +18,7 @@ module.exports = Object.assign({},
         },
         {
           test: /\.s?css$/,
+          exclude: $[frontend.scssExclude],
           use: ExtractTextPlugin.extract({
             fallback: 'style-loader',
             use: [
@@ -40,8 +41,7 @@ module.exports = Object.assign({},
                  }
               }
             ]
-          }),
-          exclude: /node_modules/
+          })
         }
       ])
     },

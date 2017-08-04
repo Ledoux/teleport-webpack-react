@@ -21,7 +21,7 @@ module.exports = Object.assign({},
       rules: config.module.rules.concat([
         {
           test: /\.s?css$/,
-          exclude: /node_modules/,
+          exclude: $[frontend.scssExclude],
           use: [
             'style-loader',
             'css-loader',

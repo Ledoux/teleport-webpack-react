@@ -1,5 +1,6 @@
 {
   "frontend": {
+    "scssExclude": "/node_modules/"
   },
   "iconUrl": "https://raw.githubusercontent.com/snipsco/teleport-webpack-react/master/teleport-webpack-react.png"
 }
