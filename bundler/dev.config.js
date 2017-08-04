@@ -1,4 +1,6 @@
+const path = require('path')
 const webpack = require('webpack')
+
 const config = require('./config')
 const serverConfig = require('./server.config.js')
 
@@ -16,15 +18,25 @@ module.exports = Object.assign({},
       }
     ),
     module: {
-      rules: config.module.rules.concat([{
+      rules: config.module.rules.concat([
+        {
           test: /\.s?css$/,
           exclude: /node_modules/,
           use: [
             'style-loader',
             'css-loader',
-            'sass-loader'
+            'sass-loader',
+            {
+               loader: "sass-vars-loader",
+               options: {
+                 files: [
+                   path.resolve(__dirname, '../frontend/scripts/utils/sass.js')
+                 ]
+               }
+            }
           ]
-        }, {
+        },
+        {
           test: /\.(eot|woff|woff2|ttf|otf|svg|png|jpg)$/,
           use: 'url-loader?limit=30000'
         }
