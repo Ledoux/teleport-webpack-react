@@ -34,10 +34,10 @@
     "webpack": "^3.3.0",
 		"webpack-dev-server": "2.4.2"
   },
-  "name": "teleport-webpack-react",
+  "name": "teleport-webpack-react-rc",
   "repository": {
     "type": "git",
     "url": "https://github.com/snipsco/teleport-webpack-react"
   },
-  "version": "0.2.6"
+  "version": "0.3.15"
 }

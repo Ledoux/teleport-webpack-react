@@ -4,7 +4,7 @@ const colorsByName = {
   lightBlue: '#1acfff',
   mediumBlue: '#33aece',
   darkGrey: '#4a4a4a',
-  lightGrey: '#1acfff',
+  lightGrey: '#fcfcfc',
   mediumGrey: '#dcdddc',
   middleGrey: '#777777',
   pastelGrey: '#c5c5c5',
