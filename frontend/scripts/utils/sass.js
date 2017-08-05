@@ -1,7 +1,8 @@
 const kebabCase = require('lodash.kebabcase')
 
 const colorsByName = {
-  blue: '#33aece',
+  lightBlue: '#1acfff',
+  mediumBlue: '#33aece',
   darkGrey: '#4a4a4a',
   lightGrey: '#1acfff',
   mediumGrey: '#dcdddc',
