@@ -4,6 +4,7 @@ const fs = require('fs')
 const gzipSize = require('gzip-size')
 const path = require('path')
 const webpack = require('webpack')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const config = require('./config')
 const onProdDone = require('./onProdDone.js')
@@ -75,7 +76,12 @@ module.exports = Object.assign({},
         this.plugin('done', function (stats) {
           onProdDone(stats)
         })
-      }
+      },
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: false,
+        reportFilename: path.resolve(__dirname, 'report.html')
+      })
     ]
   }
 )
