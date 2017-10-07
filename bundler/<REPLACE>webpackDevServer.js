@@ -2,10 +2,10 @@ const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 
 const devConfig = require('./dev.config')
-const serverConfig = require('./server.config.js')
-
-const HOST = serverConfig.host
-const PORT = serverConfig.port
+const { host,
+  port,
+  url
+} = require('./server.config.js')
 
 new WebpackDevServer(
   webpack(devConfig),
@@ -31,9 +31,9 @@ new WebpackDevServer(
       chunkModules: false
     }
   }
-).listen(PORT, HOST, function (err, result) {
+).listen(port, host, function (err, result) {
   if (err) {
     return console.log(err)
   }
-  console.log(`You hot server is available here http://${HOST}:${PORT}`)
+  console.log(`You hot server is available here ${url}`)
 })
