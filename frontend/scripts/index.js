@@ -1,48 +1,40 @@
 require('./utils/styles')
-
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Root from './react/containers/Root'
+import init from './utils/init'
+import ready from './utils/ready'
+import createRoot from './utils/root'
 
-export function domReady () {
-  return new Promise(function (resolve) {
-    var state = document.readyState
-    if (state === 'complete' ||
-      state === 'loaded' ||
-      state === 'interactive') {
-      return resolve()
-    }
+// ROOT
+const root = createRoot(createBrowserHistory({ basename: '/' }))
 
-    document.addEventListener('DOMContentLoaded', function () {
-      resolve()
-    })
-  })
-}
-
-domReady().then(() => {
-  // actual render app
+// READY
+ready().then(() => {
+  // INIT
+  init && init(root)
+  // RENDER
   const reactDivElement = document.getElementById('app_div')
   if (!reactDivElement) {
     return
   }
-
   if (!module.hot) {
     // production
-    ReactDOM.render(<Root />, reactDivElement)
+    ReactDOM.render(<Root {...root} />, reactDivElement)
   } else {
     // dev
     const AppContainer = require('react-hot-loader').AppContainer
     ReactDOM.render(
       <AppContainer>
-        <Root />
+        <Root {...root} />
       </AppContainer>
       , reactDivElement)
     module.hot.accept('./react/containers/Root', () => {
       const NextRoot = require('./react/containers/Root').default
       ReactDOM.render(
         <AppContainer>
-          <NextRoot />
+          <NextRoot {...root} />
         </AppContainer>,
         reactDivElement
       )
