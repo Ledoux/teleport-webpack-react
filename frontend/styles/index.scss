@@ -1,5 +1,2 @@
-// vendor
-@import './vendors/basscss.scss';
-
-// components
-@import './components/TeleportWelcome';
+@import './vendors/index.scss';
+@import './components/index.scss';
