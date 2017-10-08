@@ -11,11 +11,10 @@ const TeleportWelcome = ({templates}) => {
       </h2>
       <p className="teleport__text mb3">
         This app was made using
-        <a
-          className="teleport__text__href"
+        <a className="teleport__text__href"
           href="https://github.com/snipsco/teleport"
-          target="_blank"
-        > Teleport
+          target="_blank" >
+          Teleport
         </a>
       </p>
       <div className="teleport__templates p2 mb3">
@@ -23,13 +22,12 @@ const TeleportWelcome = ({templates}) => {
           {
             templates.map((template, index) => (
               <div key={index} className="mr2">
-               <a
-                title={template.name}
-                href={template.gitUrl} >
+               <a title={template.name}
+                 href={template.gitUrl} >
                   <img src={template.iconUrl} />
                </a>
-              </div>)
-            )
+              </div>
+            ))
           }
         </div>
       </div>
