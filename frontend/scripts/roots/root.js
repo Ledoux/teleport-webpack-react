@@ -1,4 +1,4 @@
-import config from './config'
+import config from '../utils/config'
 
 export function createRoot () {
   const setup = Object.assign({}, config,
