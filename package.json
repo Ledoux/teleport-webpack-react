@@ -35,7 +35,7 @@
     "webpack-bundle-analyzer": "^2.9.0",
 		"webpack-dev-server": "2.4.2"
   },
-  "name": "teleport-webpack-react-rc",
+  "name": "teleport-webpack-react",
   "repository": {
     "type": "git",
     "url": "https://github.com/snipsco/teleport-webpack-react"
