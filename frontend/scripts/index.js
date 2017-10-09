@@ -6,6 +6,10 @@ import Root from './react/containers/Root'
 import root from './roots/browser.root'
 import init from './utils/init'
 import ready from './utils/ready'
+<<<<<<< HEAD
+=======
+import root from './utils/browser.root'
+>>>>>>> d35d50c46947819ba9e6cc958451db5909d2e4dd
 
 // READY
 ready().then(() => {
