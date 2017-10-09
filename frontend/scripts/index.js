@@ -3,12 +3,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Root from './react/containers/Root'
+import root from './roots/browser.root'
 import init from './utils/init'
 import ready from './utils/ready'
-import createRoot from './utils/root'
-
-// ROOT
-const root = createRoot(createBrowserHistory({ basename: '/' }))
 
 // READY
 ready().then(() => {
