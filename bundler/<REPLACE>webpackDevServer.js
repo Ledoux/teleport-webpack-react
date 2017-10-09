@@ -2,7 +2,8 @@ const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
 
 const devConfig = require('./dev.config')
-const { host,
+const { contentBase,
+  host,
   port,
   url
 } = require('./server.config.js')
@@ -10,7 +11,7 @@ const { host,
 new WebpackDevServer(
   webpack(devConfig),
   {
-    contentBase: 'backend/servers/$[frontend.serverName]/app/templates/',
+    contentBase,
     headers: {
       "Access-Control-Allow-Origin": '$[frontend.run.url]'
     },
