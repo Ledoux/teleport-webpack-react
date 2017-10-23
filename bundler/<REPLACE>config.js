@@ -5,7 +5,7 @@ module.exports = {
   entry: {
     index: [
       'babel-polyfill',
-      path.join(ROOT_DIR, 'frontend/scripts/index.js')
+      path.join(ROOT_DIR, 'frontend/scripts/browser/index.js')
     ]
   },
   module: {

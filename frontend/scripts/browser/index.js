@@ -1,9 +1,9 @@
-require('./utils/styles')
+require('../utils/styles')
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import Root from './react/containers/Root'
-import root from './roots/browser.root'
+import root from './web.browser.root'
+const { Root, rootProps } = root
 import init from './utils/init'
 import ready from './utils/ready'
 
