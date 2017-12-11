@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TeleportWelcome from '../components/TeleportWelcome'
+import TeleportWelcome from './components/TeleportWelcome'
 
 const App = () => (
   <div>

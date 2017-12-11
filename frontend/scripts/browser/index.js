@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom'
 
 import root from './web.browser.root'
 const { Root, rootProps } = root
-import init from './utils/init'
-import ready from './utils/ready'
+import init from '../utils/init'
+import ready from '../utils/ready'
 
 // READY
 ready().then(() => {
@@ -18,20 +18,21 @@ ready().then(() => {
   }
   if (!module.hot) {
     // production
-    ReactDOM.render(<Root {...root} />, reactDivElement)
+    ReactDOM.render(<Root {...rootProps} />, reactDivElement)
   } else {
     // dev
     const AppContainer = require('react-hot-loader').AppContainer
     ReactDOM.render(
       <AppContainer>
-        <Root {...root} />
+        <Root {...rootProps} />
       </AppContainer>
       , reactDivElement)
-    module.hot.accept('./react/containers/Root', () => {
-      const NextRoot = require('./react/containers/Root').default
+    module.hot.accept('./web.browser.root', () => {
+      const nextRoot = require('./web.browser.root')
+      const NextRoot = nextRoot.Root
       ReactDOM.render(
         <AppContainer>
-          <NextRoot {...root} />
+          <NextRoot {...rootProps} />
         </AppContainer>,
         reactDivElement
       )

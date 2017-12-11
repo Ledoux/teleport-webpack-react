@@ -1,4 +1,4 @@
-import App from '../browser/App'
+import App from './App'
 import createRoot from '../utils/root'
 
 const createBrowserRoot = () => createRoot({ App })
