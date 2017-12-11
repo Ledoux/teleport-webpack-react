@@ -10,7 +10,7 @@ import ready from '../utils/ready'
 // READY
 ready().then(() => {
   // INIT
-  init && init(root)
+  init && init(rootProps)
   // RENDER
   const reactDivElement = document.getElementById('app_div')
   if (!reactDivElement) {
@@ -28,7 +28,7 @@ ready().then(() => {
       </AppContainer>
       , reactDivElement)
     module.hot.accept('./web.browser.root', () => {
-      const nextRoot = require('./web.browser.root')
+      const nextRoot = require('./web.browser.root').default
       const NextRoot = nextRoot.Root
       ReactDOM.render(
         <AppContainer>
