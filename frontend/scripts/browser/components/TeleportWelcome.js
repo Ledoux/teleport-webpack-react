@@ -17,11 +17,11 @@ const TeleportWelcome = ({templates}) => {
           Teleport
         </a>
       </div>
-      <div className='teleport__templates p2 mb3'>
+      <div className='teleport__templates p1 mb3'>
         <div className='flex justify-center items-center'>
           {
             templates.map((template, index) => (
-              <div key={index} className='mr2'>
+              <div key={index} className='mr1'>
                <a title={template.name}
                  href={template.gitUrl} >
                   <img className='teleport__templates__img' src={template.iconUrl} />
